@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
-  catalog_id: 
+  user: one
+  catalog: one
 
 two:
-  user_id: 
-  catalog_id: 
+  user: one
+  catalog: one
+
+three:
+  user: one
+  catalog: two
