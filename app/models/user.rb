@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:guest, :basic, :admin]
+
+  has_many :pokemons
+  has_many :catalogs, through: :pokemons
 end
