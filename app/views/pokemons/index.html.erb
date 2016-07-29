@@ -1,0 +1,7 @@
+<h1>Mis Pokemones</h1>
+
+<ul>
+	<% @pokemons.each do |pokemon| %>
+		<li><%= pokemon.catalog.name %></li>
+	<% end %>
+</ul>
