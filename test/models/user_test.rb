@@ -9,11 +9,12 @@ class UserTest < ActiveSupport::TestCase
   	@user = users(:one)
   end
 
-  test "user one must have 3 pokemons" do
-  	assert_equal @user.pokemons.count, 3
+  test "ash must have 3 pokemons" do
+  	assert_equal 3, @user.pokemons.size
   end
 
-  test "user trainer1 must have a caterpie" do
-  	assert_includes @user.catalogs, catalogs(:two)
+  test "ash must have a caterpie" do
+  	#assert_includes @user.catalogs, catalogs(:two)
+  	assert_includes @user.catalogs.map(&:name), 'Caterpie'
   end
 end

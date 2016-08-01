@@ -5,11 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: rcereced@gmail.com
-  name: trainer1
+  email: ash@desafiolatam.com
+  name: Ash
 # column: value
 #
 two:
-  email: rodrigo@desafiolatam.com
-  name: admin
+  email: red@desafiolatam.com
+  name: Red
 #  column: value

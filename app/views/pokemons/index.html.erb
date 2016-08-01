@@ -1,7 +1,37 @@
 <h1>Mis Pokemones</h1>
 
-<ul>
-	<% @pokemons.each do |pokemon| %>
-		<li><%= pokemon.catalog.name %></li>
-	<% end %>
-</ul>
+<div class="row">
+	<div class="col-md-6">
+		<table>
+			<% @pokemons.each do |pokemon| %>
+				<tr>
+					<td><%= pokemon.catalog.name %></td>
+					<td><%= pokemon.catalog.description %></td>
+					<td><%= pokemon.level %></td>
+					<td><%= link_to "+1", levelup_pokemon_path(pokemon.id) %></td>
+					<td><%= link_to "-1", leveldown_pokemon_path(pokemon.id) %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+
+	<div class="col-md-6">
+		<table>
+		<% @catalogs.each do |catalog| %>
+			<tr>
+				<td>
+					<%= catalog.name %>
+				</td>
+				<td>
+					<%= form_for(@pokemon) do |f| %>
+					  <%= f.hidden_field :catalog_id, value: catalog.id %>
+					  <div class="actions">
+					    <%= f.submit %>
+					  </div>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+		</table>
+	</div>
+</div>

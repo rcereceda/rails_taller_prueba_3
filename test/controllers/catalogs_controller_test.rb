@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class CatalogsControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
+
   setup do
     @catalog = catalogs(:one)
   end

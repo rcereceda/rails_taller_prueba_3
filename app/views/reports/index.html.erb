@@ -1,0 +1,15 @@
+<h1>Mis Reportes</h1>
+
+<div class="row">
+	<div class="col-md-6">
+		<table>
+			<% @reports.each do |report| %>
+				<tr>
+					<td><%= report.information %></td>
+					<td><%= image_tag(report.picture, class:"img-responsive") if report.picture? %></td>
+				</tr>
+			<% end %>
+		</table>
+		<%= link_to 'New Report', new_report_path %>
+	</div>
+</div>

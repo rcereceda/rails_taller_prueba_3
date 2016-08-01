@@ -18,4 +18,4 @@ users = User.create([{ email: 'rcereced@gmail.com', name: 'trainer1', password: 
 
 catalogs = Catalog.create([{ name: 'Ratata', description: 'Mouse Pokemon' }, { name: 'Caterpie', description: 'Worm Pokemon'}])
 
-Pokemon.create([{ user: users.first, catalog: catalogs.first }, { user: users.first, catalog: catalogs.first }, { user: users.first, catalog: catalogs.second }])
+Pokemon.create([{ user: users.first, catalog: catalogs.first, level: 10 }, { user: users.first, catalog: catalogs.first, level: 12 }, { user: users.first, catalog: catalogs.second, level: 5 }])

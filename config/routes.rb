@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
-  get 'pokemons/index'
+  # get 'reports/index'
+  # get 'pokemons/index'
+  # get 'pokemons/new'
+  # post 'pokemons/new'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -8,6 +11,14 @@ Rails.application.routes.draw do
   }
 
   resources :catalogs
+  resources :pokemons, only: [:index, :new, :create] do
+    member do
+      get 'levelup'
+      get 'leveldown'
+    end
+  end
+  resources :reports
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,22 @@
+<%= form_for(@pokemon) do |f| %>
+  <% if @pokemon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pokemon.errors.count, "error") %> prohibited this pokemon from being saved:</h2>
+
+      <ul>
+      <% @pokemon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @catalogs.each do |catalog| %>
+    <%= catalog.name %>
+    <%= f.check_box :pokemon_ids, { multiple: true }, pokemon.id, [] %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
