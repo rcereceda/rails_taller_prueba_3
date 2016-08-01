@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+
+  get 'pages/error'
+
   # get 'reports/index'
   # get 'pokemons/index'
   # get 'pokemons/new'
@@ -11,13 +13,20 @@ Rails.application.routes.draw do
   }
 
   resources :catalogs
+  
   resources :pokemons, only: [:index, :new, :create] do
     member do
       get 'levelup'
       get 'leveldown'
     end
   end
-  resources :reports
+
+  resources :users do #, only: [:index] do
+    member do
+      get 'set_admin'
+    end
+    resources :reports
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

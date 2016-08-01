@@ -15,7 +15,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Mis Pokemones', pokemons_path %></li>
-        <li><%= link_to 'Mis Reportes', reports_path %></li>
+        <li><%= link_to 'Mis Reportes', user_reports_path(current_user) if current_user %></li>
+        <li><%= link_to 'Usuarios', users_path %></li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">

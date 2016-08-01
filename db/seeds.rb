@@ -9,6 +9,7 @@
 Catalog.destroy_all
 User.destroy_all
 Pokemon.destroy_all
+Report.destroy_all
 
 # 10.times do
 # 	Catalog.create(name: Faker::Pokemon.name, description: Faker::Lorem.sentence)

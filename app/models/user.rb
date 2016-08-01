@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
 
   private
   def set_default_role
-  	role ||= 1
+  	self.role ||= 1
   end
 end
